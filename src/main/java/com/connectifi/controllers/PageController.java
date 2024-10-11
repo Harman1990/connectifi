@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestParam;
 import com.connectifi.helpers.Message;
 import com.connectifi.helpers.MessageType;
 
@@ -96,7 +96,7 @@ public class PageController {
         user.setPhoneNumber(userForm.getPhoneNumber());
         user.setEnabled(false);
         user.setProfilePic(
-                "https://www.learncodewithdurgesh.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdurgesh_sir.35c6cb78.webp&w=1920&q=75");
+                "https://static-00.iconduck.com/assets.00/profile-default-icon-2048x2045-u3j7s5nj.png");
 
         User savedUser = userService.saveUser(user);
 
