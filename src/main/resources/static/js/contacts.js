@@ -1,6 +1,6 @@
 console.log("Contacts.js");
 const baseURL = "http://localhost:8081";
-//const baseURL = "https://www.scm20.site";
+
 const viewContactModal = document.getElementById("view_contact_modal");
 
 // options with default values
@@ -76,6 +76,9 @@ async function deleteContact(id) {
     icon: "warning",
     showCancelButton: true,
     confirmButtonText: "Delete",
+    confirmButtonColor: '#dc3545',  // Red color for delete button
+    cancelButtonText: "Cancel",
+    cancelButtonColor: '#6c757d', 
   }).then((result) => {
     /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
