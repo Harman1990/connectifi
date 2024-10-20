@@ -24,7 +24,7 @@ public class ImageServiceImpl implements ImageService {
     @Override
     public String uploadImage(MultipartFile contactImage, String filename) {
 
-        // code likhnaa hia jo image ko upload kar rha ho
+      
         
         try {
             byte[] data = new byte[contactImage.getInputStream().available()];
@@ -38,7 +38,6 @@ public class ImageServiceImpl implements ImageService {
             return null;
         }
 
-        // and return raha hoga : url
 
     }
 

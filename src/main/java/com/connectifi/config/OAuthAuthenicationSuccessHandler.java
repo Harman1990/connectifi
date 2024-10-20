@@ -34,44 +34,7 @@ public class OAuthAuthenicationSuccessHandler implements AuthenticationSuccessHa
     @Autowired
     private UserRepo userRepo;
 
-    // @Override
-    // public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-    //         Authentication authentication) throws IOException, ServletException {
-
-    //             logger.info("OAuthAuthenicationSuccessHandler");
-
-                
-
-    //             DefaultOAuth2User user=(DefaultOAuth2User)authentication.getPrincipal();
-
-    //             String email = user.getAttribute("email").toString();
-    //             String name = user.getAttribute("name").toString();
-    //             String picture = user.getAttribute("picture").toString();
-
-    //             // Create user and save in database
-    //             User user1=new User();
-    //             user1.setEmail(email);
-    //             user1.setName(name);
-    //             user1.setProfilePic(picture);
-    //             user1.setPassword("password");
-    //             user1.setUserId(UUID.randomUUID().toString());
-    //             user1.setProvider(Providers.GOOGLE);
-    //             user1.setEnabled(true);
-    //             user1.setEmailVerified(true);
-    //             user1.setProviderUserId(user.getName());
-    //             user1.setRoleList(List.of(AppConstants.ROLE_USER));
-    //             user1.setAbout("This account is created using google");
-
-
-    //             User user2=userRepo.findByEmail(email).orElse(null);
-    //             if(user2==null){
-    //                 userRepo.save(user1);
-    //                 logger.info("User saved"+email);
-    //             }
-
-    //             new DefaultRedirectStrategy().sendRedirect(request, response, "/user/profile");
-        
-    // }
+    
 
     @Override
     public void onAuthenticationSuccess(
@@ -141,55 +104,7 @@ public class OAuthAuthenicationSuccessHandler implements AuthenticationSuccessHa
             logger.info("OAuthAuthenicationSuccessHandler: Unknown provider");
         }
 
-        // save the user
-        // facebook
-        // facebook attributes
-        // linkedin
-
-        /*
-         * 
-         * 
-         * 
-         * DefaultOAuth2User user = (DefaultOAuth2User) authentication.getPrincipal();
-         * 
-         * logger.info(user.getName());
-         * 
-         * user.getAttributes().forEach((key, value) -> {
-         * logger.info("{} => {}", key, value);
-         * });
-         * 
-         * logger.info(user.getAuthorities().toString());
-         * 
-         * // data database save:
-         * 
-         * String email = user.getAttribute("email").toString();
-         * String name = user.getAttribute("name").toString();
-         * String picture = user.getAttribute("picture").toString();
-         * 
-         * // create user and save in database
-         * 
-         * User user1 = new User();
-         * user1.setEmail(email);
-         * user1.setName(name);
-         * user1.setProfilePic(picture);
-         * user1.setPassword("password");
-         * user1.setUserId(UUID.randomUUID().toString());
-         * user1.setProvider(Providers.GOOGLE);
-         * user1.setEnabled(true);
-         * 
-         * user1.setEmailVerified(true);
-         * user1.setProviderUserId(user.getName());
-         * user1.setRoleList(List.of(AppConstants.ROLE_USER));
-         * user1.setAbout("This account is created using google..");
-         * 
-         * User user2 = userRepo.findByEmail(email).orElse(null);
-         * if (user2 == null) {
-         * 
-         * userRepo.save(user1);
-         * logger.info("User saved:" + email);
-         * }
-         * 
-         */
+        
 
         User user2 = userRepo.findByEmail(user.getEmail()).orElse(null);
         if (user2 == null) {

@@ -84,8 +84,6 @@ public class ContactController {
         // // 2 process the contact picture
 
         // // image process
-
-        // // uplod karne ka code
         Contact contact = new Contact();
         contact.setName(contactForm.getName());
         contact.setFavorite(contactForm.isFavorite());
@@ -107,9 +105,6 @@ public class ContactController {
         contactService.save(contact);
         // System.out.println(contactForm);
 
-        // // 3 set the contact picture url
-
-        // // 4 `set message to be displayed on the view
 
         session.setAttribute("message",
                 Message.builder()
